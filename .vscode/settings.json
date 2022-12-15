@@ -22,4 +22,6 @@
         "--show-column-numbers"
     ],
     "python.analysis.completeFunctionParens": true,
+    "robotcode.debug.attachPython": true,
+    "robotcode.run.openOutputAfterRun": "log",
 }
