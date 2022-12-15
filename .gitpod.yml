@@ -4,7 +4,7 @@ image:
 tasks:
   - name: init dev environment
     init: >
-      poetry install
+      poetry install --no-root
 
 vscode:
   extensions:
