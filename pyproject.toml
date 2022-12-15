@@ -4,11 +4,11 @@ version = "0.1.0"
 description = ""
 authors = ["Daniel Biehl <dbiehl@live.de>"]
 readme = "README.md"
-packages = [{include = "test_arch_gitpod"}]
+
 
 [tool.poetry.dependencies]
 python = "^3.8"
-robotframework = "*"
+robotframework = "^6.0.1"
 PyYAML = "*"
 types-PyYAML = "*"
 robotframework-robocop = "*"
@@ -28,9 +28,11 @@ pep8-naming = "*"
 [tool.poetry.group.test.dependencies]
 pytest = "*"
 
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
 
 [tool.mypy]
 # MyPy config
@@ -53,11 +55,10 @@ exclude = [
   "scripts",
 ]
 
+
 [[tool.mypy.overrides]]
-module = [
-  "robot.*",
-  "robotremoteserver.*"
-]
+module = ["robot.*", "robotremoteserver.*"]
+ignore_missing_imports = true
 
 [tool.black]
 line-length = 120
