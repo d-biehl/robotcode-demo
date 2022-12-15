@@ -1,0 +1,14 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - name: init dev environment
+    init: >
+      poetry install
+
+vscode:
+  extensions:
+    - ms-python.python
+    - esbenp.prettier-vscode
+
+    - d-biehl.robotcode

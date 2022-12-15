@@ -1,0 +1,25 @@
+{
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.idea": true,
+        "**/.mypy_cache": true,
+        "**/.pytest_cache": true
+    },
+    "files.watcherExclude": {
+        "**/__pycache__": true,
+        "**/.idea": true,
+        "**/.mypy_cache": true,
+        "**/.pytest_cache": true
+    },
+    "python.linting.flake8Enabled": true,
+    "python.linting.mypyEnabled": true,
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.formatting.provider": "black",
+    "python.linting.mypyArgs": [
+        "--show-column-numbers"
+    ],
+    "python.analysis.completeFunctionParens": true,
+}

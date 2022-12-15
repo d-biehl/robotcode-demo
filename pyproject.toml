@@ -1,0 +1,79 @@
+[tool.poetry]
+name = "test-arch-gitpod"
+version = "0.1.0"
+description = ""
+authors = ["Daniel Biehl <dbiehl@live.de>"]
+readme = "README.md"
+packages = [{include = "test_arch_gitpod"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+robotframework = "`*"
+PyYAML = "*"
+types-PyYAML = "*"
+robotframework-robocop = "*"
+robotframework-tidy = "*"
+docutils = "*"
+types-docutils = "*"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "*"
+mypy = "*"
+isort = "*"
+flake8 = "*"
+pep8-naming = "*"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+# MyPy config
+# File reference here - http://mypy.readthedocs.io/en/latest/config_file.html#config-file
+python_version = 3.8
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_return_any = true
+warn_unused_configs = true
+strict = true
+disallow_subclassing_any = false
+#ignore_missing_imports = true
+exclude = [
+  "\\.mypy_cache",
+  "\\.venv",
+  "build",
+  "dist",
+  "out",
+  "playground",
+  "scripts",
+]
+
+[[tool.mypy.overrides]]
+module = [
+  "robot.*",
+  "robotremoteserver.*"
+]
+
+[tool.black]
+line-length = 120
+target-version = ['py38']
+exclude = '''
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | build
+    | dist
+    | out
+    | playground
+  )/
+)
+'''
