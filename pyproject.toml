@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "test-arch-gitpod"
+name = "robotcode-demo"
 version = "0.1.0"
 description = ""
 authors = ["Daniel Biehl <dbiehl@live.de>"]
