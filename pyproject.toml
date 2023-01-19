@@ -15,6 +15,7 @@ robotframework-robocop = "*"
 robotframework-tidy = "*"
 docutils = "*"
 types-docutils = "*"
+robotframework-browser = "^15.1.0"
 
 
 [tool.poetry.group.dev.dependencies]
