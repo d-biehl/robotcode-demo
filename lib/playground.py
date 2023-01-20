@@ -1,2 +1,2 @@
-def hello_from_playground() -> None:
-    print("Hello from playground")
+def say_hello_to(name: str) -> None:
+    print(f"Hello from {name}")
