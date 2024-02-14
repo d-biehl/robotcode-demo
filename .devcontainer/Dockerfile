@@ -1,3 +1,3 @@
-from mcr.microsoft.com/devcontainers/base:jammy
+from mcr.microsoft.com/devcontainers/python:3.11
 
 RUN apt update -y && apt upgrade -y

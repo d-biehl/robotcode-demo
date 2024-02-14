@@ -16,12 +16,7 @@
             "installOhMyZshConfig": true,
             "upgradePackages": true
         },
-        "ghcr.io/devcontainers/features/node:1": {},
-        "ghcr.io/devcontainers/features/python:1": {
-            "version": "os-provided",
-            "installTools": true,
-            "optimize": true
-        }
+        "ghcr.io/devcontainers/features/node:1": {}
     },
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     // "forwardPorts": [],
