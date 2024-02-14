@@ -22,7 +22,7 @@
     // "forwardPorts": [],
     // Use 'postCreateCommand' to run commands after the container is created.
     "postCreateCommand": "pipx install poetry && poetry install --no-root --no-interaction",
-    "containerUser": "vscode",
+    //"containerUser": "vscode",
     "remoteUser": "vscode",
     // Configure tool-specific properties.
     "customizations": {
