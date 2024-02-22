@@ -1,7 +1,8 @@
 *** Settings ***
-Library     playground
+Library     TestLib    ${None}
+
 
 *** Test Cases ***
 first
-    Log    hello world
-    Say Hello To    world
+    Increment
+    ${v}    Get Value

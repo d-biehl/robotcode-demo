@@ -1,0 +1,23 @@
+{
+    "name": "robot framework devcontainer",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "remoteUser": "vscode",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "esbenp.prettier-vscode",
+                "dbaeumer.vscode-eslint",
+                "d-biehl.robotcode"
+            ],
+            "settings": {
+                "prettier.printWidth": 120,
+                "prettier.tabWidth": 4,
+                "eslint.format.enable": true,
+                "eslint.lintTask.enable": true
+            }
+        }
+    }
+}

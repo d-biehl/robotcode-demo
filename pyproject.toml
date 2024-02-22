@@ -38,7 +38,7 @@ build-backend = "poetry.core.masonry.api"
 [tool.mypy]
 # MyPy config
 # File reference here - http://mypy.readthedocs.io/en/latest/config_file.html#config-file
-python_version = 3.8
+python_version = "3.10"
 warn_redundant_casts = true
 warn_unused_ignores = true
 warn_return_any = true
