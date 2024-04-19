@@ -15,8 +15,18 @@
         "**/.pytest_cache": true
     },
     "python.terminal.activateEnvInCurrentTerminal": true,
-
     "python.analysis.completeFunctionParens": true,
     "robotcode.debug.attachPython": true,
     "robotcode.run.openOutputAfterRun": "log",
+    "debugpy.debugJustMyCode": false,
+    "robotcode.analysis.findUnusedReferences": true,
+    "robotcode.analysis.progressMode": "simple",
+    "robotcode.languageServer.extraArgs": [
+        "--debugpy",
+        "--debugpy-wait-for-client",
+    ],
+    "robotcode.analysis.cache.ignoreArgumentsForLibrary": [
+        "playground"
+    ]
+
 }
