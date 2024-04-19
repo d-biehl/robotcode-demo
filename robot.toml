@@ -1,0 +1,15 @@
+paths = "."
+
+[parsers]
+GherkinParser = []
+
+[variables]
+BROWSER = "chromium"
+HEADLESS = "True"
+
+
+[profiles.no-headless.variables]
+HEADLESS = "False"
+
+[profiles.firefox.variables]
+BROWSER = "firefox"

@@ -1,81 +1,54 @@
-[tool.poetry]
-name = "robotcode-demo"
-version = "0.1.0"
-description = ""
-authors = ["Daniel Biehl <dbiehl@live.de>"]
-readme = "README.md"
-
-
-[tool.poetry.dependencies]
-python = "^3.8"
-robotframework = "^6.0.1"
-PyYAML = "*"
-types-PyYAML = "*"
-robotframework-robocop = "*"
-robotframework-tidy = "*"
-docutils = "*"
-types-docutils = "*"
-robotframework-browser = "^15.1.0"
-
-
-[tool.poetry.group.dev.dependencies]
-black = "*"
-mypy = "*"
-isort = "*"
-flake8 = "*"
-pep8-naming = "*"
-
-
-[tool.poetry.group.test.dependencies]
-pytest = "*"
-
-
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
-
-[tool.mypy]
-# MyPy config
-# File reference here - http://mypy.readthedocs.io/en/latest/config_file.html#config-file
-python_version = 3.8
-warn_redundant_casts = true
-warn_unused_ignores = true
-warn_return_any = true
-warn_unused_configs = true
-strict = true
-disallow_subclassing_any = false
-#ignore_missing_imports = true
-exclude = [
-  "\\.mypy_cache",
-  "\\.venv",
-  "build",
-  "dist",
-  "out",
-  "playground",
-  "scripts",
+[project]
+name = "robotcode-demo"
+dynamic = ["version"]
+description = ''
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = []
+authors = [{ name = "Daniel Biehl", email = "dbiehl@live.de" }]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+  "robotframework",
+  "robotframework-gherkin-parser",
+  "robotframework-browser",
+  "robotframework-faker",
+  "robotcode[runner]",
 ]
 
+[project.urls]
+Documentation = "https://github.com/unknown/robotcode-demo#readme"
+Issues = "https://github.com/unknown/robotcode-demo/issues"
+Source = "https://github.com/unknown/robotcode-demo"
 
-[[tool.mypy.overrides]]
-module = ["robot.*", "robotremoteserver.*"]
-ignore_missing_imports = true
+[tool.hatch.build.targets.wheel]
+packages = ["src/robotcode_demo"]
 
-[tool.black]
-line-length = 120
-target-version = ['py38']
-exclude = '''
-(
-  /(
-      \.eggs         # exclude a few common directories in the
-    | \.git          # root of the project
-    | \.mypy_cache
-    | \.tox
-    | \.venv
-    | build
-    | dist
-    | out
-    | playground
-  )/
-)
-'''
+[tool.hatch.version]
+path = "src/robotcode_demo/__about__.py"
+
+[tool.hatch.envs.default]
+dependencies = [
+  "robotframework-tidy",
+  "robotframework-robocop",
+  "ruff",
+  "black",
+  "mypy",
+]
+post-install = ["rfbrowser init"]
+
+[tool.hatch.envs.default.scripts]
+test = "robotcode run {args}"
