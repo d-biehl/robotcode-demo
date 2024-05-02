@@ -48,7 +48,7 @@ dependencies = [
   "black",
   "mypy",
 ]
-post-install = ["rfbrowser init"]
+post-install-commands = ["rfbrowser init"]
 
 [tool.hatch.envs.default.scripts]
 test = "robotcode run {args}"
